@@ -1,0 +1,66 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project
+
+Personal portfolio site, scaffolded from the Vite React + TypeScript template. It is at an early stage: the only page so far is a placeholder `Home`.
+
+## Project Documentation
+
+- Keep CLAUDE.md up to date as the project evolves.
+- When significant architectural decisions, technology changes,
+  or coding conventions are established, update this file.
+- Don't document minor changes or individual bug fixes.
+- Keep documentation concise and avoid duplicating existing information.
+
+## Commands
+
+- `npm run dev`: start the Vite dev server with HMR
+- `npm run build`: type-check with `tsc -b` (project references), then run `vite build` to produce `dist/`
+- `npm run lint`: lint with oxlint (config in `.oxlintrc.json`: react, typescript and oxc plugins). `eslint-plugin-react-hooks` is loaded via oxlint `jsPlugins` under the alias `react-hooks-js` (the `react-hooks` name is reserved for oxlint's native rules, whose overlapping rules are turned off). Its compiler-based rules such as `set-state-in-effect` and `no-deriving-state-in-effects` enforce the useEffect guidance below.
+- `npm run preview`: serve the production build locally
+
+There is no test framework set up yet.
+
+## Architecture
+
+- Stack: React 19, TypeScript ~7, Vite 8 with `@vitejs/plugin-react` (Oxc-based). The React Compiler is not enabled.
+- Entry: `index.html` → `src/main.tsx`, which renders `<App />` inside a `div.index-body` wrapper under `StrictMode`. `src/App.tsx` composes the page components.
+- Pages go in `src/pages/`. Each page has its own `.tsx` file and a matching `.css` file that the component imports directly, with a page-scoped root class (for example `home-body`). Global styles go in `src/index.css`. There is no routing library yet.
+- Static assets go in `public/` and are served from the site root (for example `/favicon.svg`).
+
+## TypeScript constraints
+
+`tsconfig.app.json` enables settings that make `npm run build` fail on code that would otherwise compile:
+
+- `noUnusedLocals` / `noUnusedParameters`: unused imports or variables are build errors. With the `react-jsx` transform, do not add `import React from "react"` unless `React` is actually used.
+- `verbatimModuleSyntax`: type-only imports must use `import type`.
+- `erasableSyntaxOnly`: no `enum`, `namespace` or constructor parameter properties.
+- `allowImportingTsExtensions`: imports may include the `.tsx` extension (as in `main.tsx`).
+
+## Coding Conventions
+
+- Avoid comments in code. The only exception is a short summary comment at the top of a larger function or method.
+- Fix the underlying issue with a proper refactor instead of patching symptoms with a quick fix, when the refactor is the better solution.
+
+## React Best Practices
+
+### useEffect Restrictions
+
+- Avoid using `useEffect` by default. Only use it when synchronizing with an external system or when there is a legitimate lifecycle-related reason.
+- Never use `useEffect` to calculate derived state that can be computed during rendering.
+- Never use `useEffect` to respond to user interactions. Use event handlers instead.
+- Avoid using `useEffect` to synchronize multiple pieces of React state. Consider deriving values or lifting state up.
+- Avoid chains of effects that trigger additional state updates and renders.
+- When an effect is necessary, ensure its dependency array is complete and accurate.
+- Always implement appropriate cleanup for subscriptions, event listeners, timers, and other persistent side effects.
+- Never suppress React Hook dependency warnings just to make an effect behave as intended.
+
+### General Guidelines
+
+- Prefer simple, declarative React patterns.
+- Use `useState`, `useMemo`, `useCallback`, and `useRef` only when there is a clear reason.
+- Follow React's official documentation and recommended patterns.
+- Before introducing a `useEffect`, consider whether the problem can be solved without one.
+- Do not sacrifice code readability just to avoid a particular React hook.
