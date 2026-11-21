@@ -1,0 +1,37 @@
+.card {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0;
+  font: inherit;
+  color: #242424;
+  text-align: center;
+  background: none;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.card:hover {
+  filter: brightness(1.06);
+}
+
+.card:focus-visible {
+  outline: 2px solid #242424;
+  outline-offset: 3px;
+}
+
+.card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 12px 16px;
+}
+
+.card-title {
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+.card-content svg {
+  flex-shrink: 0;
+}

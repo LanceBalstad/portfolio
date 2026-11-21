@@ -1,0 +1,82 @@
+.hands-on {
+  display: grid;
+  grid-template-columns: 543fr 249fr 250fr;
+  gap: 40px;
+  box-sizing: border-box;
+  margin-top: 78px;
+  padding: 28px 33px 30px 24px;
+  background-color: #8d9179;
+  border: 1px solid #000;
+}
+
+.hands-on-projects {
+  min-height: 258px;
+  background-color: #ad978c;
+}
+
+.hands-on-experience,
+.hands-on-education {
+  margin-top: -74px;
+  border: 2px solid #242424;
+}
+
+.hands-on-experience {
+  background-color: #a89dac;
+}
+
+.hands-on-education {
+  background-color: #b58966;
+}
+
+@media (min-width: 721px) {
+  .hands-on-experience svg,
+  .hands-on-education svg {
+    width: calc(100% + 24px);
+    height: 155px;
+    margin-inline: -12px;
+  }
+
+  .hands-on-experience svg + svg,
+  .hands-on-education svg + svg {
+    margin-top: -16px;
+  }
+
+  .hands-on-experience svg:last-child,
+  .hands-on-education svg:last-child {
+    margin-bottom: -12px;
+  }
+
+  .hands-on-projects svg {
+    height: 120px;
+  }
+
+  .hands-on-projects svg + svg {
+    margin-top: -20px;
+  }
+
+  .hands-on-projects svg:last-child {
+    margin-bottom: -6px;
+  }
+}
+
+@media (max-width: 720px) {
+  .hands-on {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+    padding: 0 16px;
+    background: none;
+    border: none;
+  }
+
+  .hands-on-projects {
+    grid-column: 1 / -1;
+  }
+
+  .hands-on-experience,
+  .hands-on-education {
+    min-height: 240px;
+    margin-top: 0;
+    border: 1px solid #000;
+  }
+}

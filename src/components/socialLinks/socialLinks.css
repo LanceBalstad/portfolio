@@ -1,0 +1,17 @@
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-links a {
+  display: block;
+  line-height: 0;
+}
+
+.social-links a:hover {
+  opacity: 0.6;
+}

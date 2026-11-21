@@ -1,0 +1,82 @@
+.personal-info {
+  display: grid;
+  grid-template-columns: 337fr 754fr;
+  grid-template-areas:
+    "about stack"
+    "about curious";
+  gap: 24px 32px;
+  margin-top: 24px;
+  padding: 0 22px 0 37px;
+}
+
+.personal-info-about {
+  grid-area: about;
+  min-height: 329px;
+  padding: 20px;
+  background-color: #8b9ba6;
+}
+
+.personal-info-about .card-content {
+  background-color: #d3d5d2;
+  border: 1px solid #000;
+}
+
+.personal-info .tech-stack {
+  grid-area: stack;
+}
+
+.personal-info-curious {
+  grid-area: curious;
+  min-height: 155px;
+  background-color: #a48c66;
+}
+
+.personal-info-curious .card-content {
+  align-items: flex-start;
+}
+
+@media (min-width: 721px) {
+  .personal-info-about svg {
+    height: 120px;
+  }
+
+  .personal-info-about svg + svg {
+    margin-top: -20px;
+  }
+
+  .personal-info-about svg:last-child {
+    margin-bottom: -6px;
+  }
+
+  .personal-info-curious svg {
+    width: 110.7%;
+    height: 130px;
+    margin-bottom: -23px;
+    margin-left: calc(14px - 13.84%);
+  }
+}
+
+@media (max-width: 720px) {
+  .personal-info {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "about curious"
+      "stack stack";
+    gap: 16px;
+    margin-top: 16px;
+    padding: 0 16px;
+  }
+
+  .personal-info-about,
+  .personal-info-curious {
+    min-height: 240px;
+  }
+
+  .personal-info-about {
+    padding: 12px;
+  }
+
+  .personal-info-curious .card-content {
+    align-items: center;
+  }
+}

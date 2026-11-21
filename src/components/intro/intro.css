@@ -1,0 +1,44 @@
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+  padding: 40px 16px 0;
+}
+
+.intro-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.intro-photo {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 245px;
+  aspect-ratio: 345 / 415;
+  background-color: #d9d9d9;
+  border: 1px solid #000;
+}
+
+.intro-title {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 900;
+  color: #566b69;
+  -webkit-text-stroke: 0.25px #5b554c;
+}
+
+.intro-text p {
+  margin: 0 0 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #000;
+}
+
+@media (max-width: 720px) {
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

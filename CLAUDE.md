@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Personal portfolio site, scaffolded from the Vite React + TypeScript template. It is at an early stage: the only page so far is a placeholder `Home`.
+Personal portfolio site, scaffolded from the Vite React + TypeScript template. It is being built from a Figma mockup: the only page is `Home`, a single scrolling page made of section components.
 
 ## Project Documentation
 
@@ -28,6 +28,10 @@ There is no test framework set up yet.
 - Stack: React 19, TypeScript ~7, Vite 8 with `@vitejs/plugin-react` (Oxc-based). The React Compiler is not enabled.
 - Entry: `index.html` → `src/main.tsx`, which renders `<App />` inside a `div.index-body` wrapper under `StrictMode`. `src/App.tsx` composes the page components.
 - Pages go in `src/pages/`. Each page has its own `.tsx` file and a matching `.css` file that the component imports directly, with a page-scoped root class (for example `home-body`). Global styles go in `src/index.css`. There is no routing library yet.
+- Reusable or self-contained page sections go in `src/components/`, each in its own folder holding its `.tsx` and `.css` (for example `src/components/card/card.tsx` and `card.css`). Folders and files use camelCase names; components use PascalCase. Each `.css` file has a root class whose root class is named after the component (for example `.intro`, with children like `.intro-title`).
+- Clickable section cards use the shared `Card` button; their modal content is a single `CardModal` (native `<dialog>`) rendered in `Home`, which owns the open card id so both cards and header nav links can open it. Card titles and modal content live in `src/data/cards.ts`, keyed by `CardId`.
+- Breakpoints: `1104px` is where full-width blocks (banner, hands-on panel) touch the screen edges and drop their side borders; `720px` switches sections to the stacked phone layout.
+- SVG icons are React components in `src/assets/icons/`; images go in `src/assets/images/` and are imported into the component that uses them.
 - Static assets go in `public/` and are served from the site root (for example `/favicon.svg`).
 
 ## TypeScript constraints
