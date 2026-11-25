@@ -3,17 +3,7 @@
   margin: 0 auto;
 }
 
-.home-banner {
-  --fade-order: 1;
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  height: auto;
-  border: 2px solid #000;
-}
-
-@media (max-width: 1104px) {
-  .home-banner {
-    border-inline: none;
-  }
+.home-content {
+  position: relative;
+  isolation: isolate;
 }

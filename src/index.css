@@ -4,6 +4,7 @@ body {
 
 .index-body {
   min-height: 100vh;
+  overflow-x: clip;
   background: linear-gradient(to bottom right, #F1E8CD, #FFFFFF);
   font-family: "Playfair Display", serif;
   color: #000;
