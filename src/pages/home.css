@@ -4,6 +4,7 @@
 }
 
 .home-banner {
+  --fade-order: 1;
   display: block;
   box-sizing: border-box;
   width: 100%;

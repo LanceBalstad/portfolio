@@ -32,6 +32,23 @@
   font-size: 20px;
 }
 
-.card-content svg {
-  flex-shrink: 0;
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.card-body span {
+  display: block;
+}
+
+.card-link {
+  align-self: flex-end;
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 12px;
 }

@@ -1,8 +1,8 @@
 export type CardId =
-  | "projects"
   | "experience"
+  | "project1"
+  | "project2"
   | "education"
-  | "aboutMe"
   | "curious";
 
 type CardInfo = {
@@ -17,9 +17,9 @@ const loremParagraphs = [
 ];
 
 export const cards: Record<CardId, CardInfo> = {
-  projects: { title: "Projects", paragraphs: loremParagraphs },
   experience: { title: "Experience", paragraphs: loremParagraphs },
+  project1: { title: "Morning Mini", paragraphs: loremParagraphs },
+  project2: { title: "Glacial Retrievers", paragraphs: loremParagraphs },
   education: { title: "Education", paragraphs: loremParagraphs },
-  aboutMe: { title: "About Me", paragraphs: loremParagraphs },
   curious: { title: "Curious About How I Work?", paragraphs: loremParagraphs },
 };

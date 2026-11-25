@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className="home-body">
       <Header onOpenCard={setOpenCardId} />
-      <img className="home-banner" src={bannerImage} alt="Autumn tree canopy" />
+      <img className="home-banner fade-in" src={bannerImage} alt="Autumn tree canopy" />
       <Intro />
       <HandsOnExperience onOpenCard={setOpenCardId} />
       <PersonalInformation onOpenCard={setOpenCardId} />

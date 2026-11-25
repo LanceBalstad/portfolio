@@ -7,6 +7,22 @@
   list-style: none;
 }
 
+.social-links li:nth-child(1) {
+  --fade-order: 3;
+}
+
+.social-links li:nth-child(2) {
+  --fade-order: 4;
+}
+
+.social-links li:nth-child(3) {
+  --fade-order: 5;
+}
+
+.social-links li:nth-child(4) {
+  --fade-order: 6;
+}
+
 .social-links a {
   display: block;
   line-height: 0;

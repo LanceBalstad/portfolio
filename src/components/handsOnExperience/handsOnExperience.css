@@ -1,4 +1,5 @@
 .hands-on {
+  --fade-order: 7;
   display: grid;
   grid-template-columns: 543fr 249fr 250fr;
   gap: 40px;
@@ -9,54 +10,40 @@
   border: 1px solid #000;
 }
 
-.hands-on-projects {
+.hands-on-experience {
+  --fade-order: 8;
   min-height: 258px;
   background-color: #ad978c;
 }
 
-.hands-on-experience,
-.hands-on-education {
+.hands-on-project1,
+.hands-on-project2 {
   margin-top: -74px;
   border: 2px solid #242424;
 }
 
-.hands-on-experience {
+.hands-on-project1 {
+  --fade-order: 9;
   background-color: #a89dac;
 }
 
-.hands-on-education {
+.hands-on-project2 {
+  --fade-order: 10;
   background-color: #b58966;
 }
 
-@media (min-width: 721px) {
-  .hands-on-experience svg,
-  .hands-on-education svg {
-    width: calc(100% + 24px);
-    height: 155px;
-    margin-inline: -12px;
-  }
+.hands-on-experience .card-body {
+  gap: 26px;
+  margin-top: 20px;
+  padding-inline: 6px;
+}
 
-  .hands-on-experience svg + svg,
-  .hands-on-education svg + svg {
-    margin-top: -16px;
-  }
-
-  .hands-on-experience svg:last-child,
-  .hands-on-education svg:last-child {
-    margin-bottom: -12px;
-  }
-
-  .hands-on-projects svg {
-    height: 120px;
-  }
-
-  .hands-on-projects svg + svg {
-    margin-top: -20px;
-  }
-
-  .hands-on-projects svg:last-child {
-    margin-bottom: -6px;
-  }
+.hands-on-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 172 / 85;
+  object-fit: cover;
+  object-position: top;
 }
 
 @media (max-width: 720px) {
@@ -69,12 +56,12 @@
     border: none;
   }
 
-  .hands-on-projects {
+  .hands-on-experience {
     grid-column: 1 / -1;
   }
 
-  .hands-on-experience,
-  .hands-on-education {
+  .hands-on-project1,
+  .hands-on-project2 {
     min-height: 240px;
     margin-top: 0;
     border: 1px solid #000;

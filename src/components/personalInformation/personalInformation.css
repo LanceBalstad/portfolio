@@ -9,23 +9,26 @@
   padding: 0 22px 0 37px;
 }
 
-.personal-info-about {
+.personal-info-education {
+  --fade-order: 11;
   grid-area: about;
   min-height: 329px;
   padding: 20px;
   background-color: #8b9ba6;
 }
 
-.personal-info-about .card-content {
+.personal-info-education .card-content {
   background-color: #d3d5d2;
   border: 1px solid #000;
 }
 
 .personal-info .tech-stack {
+  --fade-order: 11;
   grid-area: stack;
 }
 
 .personal-info-curious {
+  --fade-order: 12;
   grid-area: curious;
   min-height: 155px;
   background-color: #a48c66;
@@ -35,25 +38,14 @@
   align-items: flex-start;
 }
 
-@media (min-width: 721px) {
-  .personal-info-about svg {
-    height: 120px;
-  }
+.personal-info-education .card-body {
+  gap: 24px;
+  margin-top: 20px;
+}
 
-  .personal-info-about svg + svg {
-    margin-top: -20px;
-  }
-
-  .personal-info-about svg:last-child {
-    margin-bottom: -6px;
-  }
-
-  .personal-info-curious svg {
-    width: 110.7%;
-    height: 130px;
-    margin-bottom: -23px;
-    margin-left: calc(14px - 13.84%);
-  }
+.personal-info-curious .card-body {
+  margin-top: 20px;
+  padding-inline: 12px;
 }
 
 @media (max-width: 720px) {
@@ -67,12 +59,12 @@
     padding: 0 16px;
   }
 
-  .personal-info-about,
+  .personal-info-education,
   .personal-info-curious {
     min-height: 240px;
   }
 
-  .personal-info-about {
+  .personal-info-education {
     padding: 12px;
   }
 

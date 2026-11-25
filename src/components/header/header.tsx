@@ -6,11 +6,11 @@ type HeaderProps = {
   onOpenCard: (id: CardId) => void;
 };
 
-const navCards: CardId[] = ["aboutMe", "experience", "projects"];
+const navCards: CardId[] = ["education", "project1", "experience"];
 
 const Header = ({ onOpenCard }: HeaderProps) => {
   return (
-    <header className="header">
+    <header className="header fade-in">
       <h1 className="header-name">Lance Balstad</h1>
       <nav className="header-nav">
         {navCards.map((id) => (

@@ -22,7 +22,7 @@ const SocialLinks = () => {
   return (
     <ul className="social-links">
       {links.map(({ label, href, icon }) => (
-        <li key={label}>
+        <li key={label} className="fade-in">
           <a
             href={href}
             aria-label={label}

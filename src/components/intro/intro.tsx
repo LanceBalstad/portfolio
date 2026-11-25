@@ -5,12 +5,12 @@ const Intro = () => {
   return (
     <section className="intro">
       <div className="intro-profile">
-        <div className="intro-photo" />
+        <div className="intro-photo fade-in" />
         <SocialLinks />
       </div>
       <div className="intro-text">
-        <h2 className="intro-title">Software Developer</h2>
-        <p>
+        <h2 className="intro-title fade-in">Software Developer</h2>
+        <p className="fade-in">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -18,14 +18,14 @@ const Intro = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur.
         </p>
-        <p>
+        <p className="fade-in">
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
           officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
           omnis iste natus error sit voluptatem accusantium doloremque
           laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
           veritatis et quasi architecto beatae vitae dicta sunt explicabo.
         </p>
-        <p>
+        <p className="fade-in">
           Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
           fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
           sequi nesciunt.

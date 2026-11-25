@@ -13,6 +13,7 @@
 }
 
 .intro-photo {
+  --fade-order: 2;
   box-sizing: border-box;
   width: 100%;
   max-width: 245px;
@@ -22,6 +23,7 @@
 }
 
 .intro-title {
+  --fade-order: 2;
   margin: 0 0 12px;
   font-size: 24px;
   font-weight: 900;
@@ -30,10 +32,19 @@
 }
 
 .intro-text p {
+  --fade-order: 3;
   margin: 0 0 16px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   color: #000;
+}
+
+.intro-text p:nth-of-type(2) {
+  --fade-order: 4;
+}
+
+.intro-text p:nth-of-type(3) {
+  --fade-order: 5;
 }
 
 @media (max-width: 720px) {

@@ -31,6 +31,7 @@ There is no test framework set up yet.
 - Reusable or self-contained page sections go in `src/components/`, each in its own folder holding its `.tsx` and `.css` (for example `src/components/card/card.tsx` and `card.css`). Folders and files use camelCase names; components use PascalCase. Each `.css` file has a root class whose root class is named after the component (for example `.intro`, with children like `.intro-title`).
 - Clickable section cards use the shared `Card` button; their modal content is a single `CardModal` (native `<dialog>`) rendered in `Home`, which owns the open card id so both cards and header nav links can open it. Card titles and modal content live in `src/data/cards.ts`, keyed by `CardId`.
 - Breakpoints: `1104px` is where full-width blocks (banner, hands-on panel) touch the screen edges and drop their side borders; `720px` switches sections to the stacked phone layout.
+- Load animation: elements get the global `fade-in` class (`src/index.css`) and set `--fade-order` in their own component CSS. Each step adds 50ms of delay, and the whole sequence from header to footer finishes in about 1s. The 720px layout uses an identically defined keyframe under its own name, so crossing that breakpoint changes `animation-name` and replays the sequence.
 - SVG icons are React components in `src/assets/icons/`; images go in `src/assets/images/` and are imported into the component that uses them.
 - Static assets go in `public/` and are served from the site root (for example `/favicon.svg`).
 

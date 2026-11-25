@@ -4,11 +4,18 @@ import "./card.css";
 type CardProps = {
   title: string;
   className?: string;
+  linkLabel?: string;
   onClick: () => void;
   children?: ReactNode;
 };
 
-const Card = ({ title, className, onClick, children }: CardProps) => {
+const Card = ({
+  title,
+  className,
+  linkLabel,
+  onClick,
+  children,
+}: CardProps) => {
   return (
     <button
       type="button"
@@ -17,7 +24,8 @@ const Card = ({ title, className, onClick, children }: CardProps) => {
     >
       <span className="card-content">
         <span className="card-title">{title}</span>
-        {children}
+        <span className="card-body">{children}</span>
+        <span className="card-link">{linkLabel} →</span>
       </span>
     </button>
   );
